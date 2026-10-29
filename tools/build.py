@@ -357,7 +357,7 @@ def build_home():
     <div class="hero__media hero__slides" data-hero-slides>
       <div class="hero__slide is-active">{img("golden-hour-portrait", "A bride and groom holding hands on a stone path at sunset", "100vw", lazy=False, priority=True)}</div>
       <div class="hero__slide">{img("chicago-skyline-couple", "A couple on the Chicago lakefront with the skyline behind", "100vw")}</div>
-      <div class="hero__slide">{img("ethan-gwyn-4", "A couple walking through autumn trees at sunset", "100vw")}</div>
+      <div class="hero__slide">{img("klarisa-sam-1", "A bride and groom laughing together on a garden bench", "100vw")}</div>
       <div class="hero__slide">{img("garden-estate-portrait", "A couple embracing on an estate lawn at golden hour", "100vw")}</div>
     </div>
     <a class="hero__card reveal" data-delay="4" href="films.html" data-cursor="Watch">
