@@ -184,14 +184,22 @@
     var gCards = Array.prototype.slice.call(gGrid.querySelectorAll(".gcard"));
     var gBar = document.querySelector("[data-gfilters]");
     var gMore = document.querySelector("[data-gallery-more]");
-    var gStep = parseInt(gGrid.dataset.page, 10) || 24, gShown = gStep, gFilter = "all";
+    var gSearch = document.querySelector("[data-gsearch]");
+    var gEmpty = document.querySelector("[data-gempty]");
+    var gStatus = document.querySelector("[data-gstatus]");
+    var gStep = parseInt(gGrid.dataset.page, 10) || 24, gShown = gStep, gFilter = "all", gQuery = "";
+    function gNorm(t) { return (t || "").toLowerCase().replace(/&|\+/g, " and ").replace(/[^a-z0-9]+/g, " ").trim(); }
+    gCards.forEach(function (c) { c._q = " " + gNorm(c.querySelector(".gcard__title").textContent + " " + c.querySelector(".gcard__label").textContent) + " "; });
     function gRender() {
-      var n = 0;
+      var n = 0, words = gQuery ? gQuery.split(" ") : [];
       gCards.forEach(function (c) {
-        var match = gFilter === "all" || c.dataset.cat === gFilter;
+        var match = (gFilter === "all" || c.dataset.cat === gFilter) &&
+          words.every(function (w) { return c._q.indexOf(" " + w) !== -1; });
         c.hidden = !(match && n++ < gShown);
       });
       if (gMore) gMore.parentElement.hidden = n <= gShown;
+      if (gEmpty) gEmpty.hidden = n > 0;
+      if (gStatus) gStatus.textContent = gQuery ? n + (n === 1 ? " gallery found" : " galleries found") : "";
     }
     if (gBar) gBar.addEventListener("click", function (e) {
       var btn = e.target.closest("[data-gfilter]");
@@ -200,6 +208,12 @@
       gBar.querySelectorAll("[data-gfilter]").forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
       gRender();
     });
+    if (gSearch) {
+      gSearch.addEventListener("input", function () { gQuery = gNorm(gSearch.value); gShown = gStep; gRender(); });
+      gSearch.addEventListener("keydown", function (e) { if (e.key === "Enter") gSearch.blur(); });
+    }
+    var gClear = document.querySelector("[data-gclear]");
+    if (gClear) gClear.addEventListener("click", function () { gSearch.value = ""; gQuery = ""; gShown = gStep; gRender(); gSearch.focus(); });
     if (gMore) gMore.addEventListener("click", function () { gShown += gStep; gRender(); });
     gRender();
   }
