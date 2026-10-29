@@ -587,31 +587,31 @@ a.tile--media:hover .circle-btn { background: var(--ivory); color: var(--night);
 .masonry__tag { position: absolute; left: 10px; bottom: 10px; z-index: 1; opacity: 0; transform: translateY(6px); transition: opacity 0.35s, transform 0.45s var(--ease-out); }
 .masonry__tag .pill { background: rgba(20, 16, 13, 0.75); border-color: transparent; color: var(--ivory); min-height: 28px; font-size: 0.75rem; }
 .masonry__item:hover .masonry__tag, .masonry__item:focus-visible .masonry__tag { opacity: 1; transform: none; }
-/* Portfolio: client gallery list (laid out like the Pic-Time galleries page; each card opens on Pic-Time) */
-.gtools { display: grid; justify-items: center; gap: 18px; margin: 0 auto clamp(40px, 6vw, 80px); }
-.gmenu { display: flex; flex-wrap: nowrap; overflow-x: auto; scrollbar-width: none; max-width: 100%; margin: 0 calc(var(--gutter) * -1); padding: 0 var(--gutter); }
-.gmenu::-webkit-scrollbar { display: none; }
-@media (min-width: 700px) { .gmenu { flex-wrap: wrap; justify-content: center; overflow: visible; max-width: 1100px; margin: 0; padding: 0; } }
-.gmenu__btn { flex: none; margin: 8px; padding: 4px 12px; font-family: var(--serif); font-size: 1.02rem; letter-spacing: 0.03em; color: var(--ink-2); border-bottom: 1px solid transparent; transition: color 0.3s, border-color 0.3s; }
-.gmenu__btn:hover { color: var(--ink); }
-.gmenu__btn[aria-pressed="true"] { color: var(--accent); border-bottom-color: var(--accent); }
-.gsearch { display: flex; align-items: center; gap: 8px; width: min(100%, 260px); padding: 0 4px; border-bottom: 1px solid var(--line-2); color: var(--ink-2); transition: border-color 0.3s; }
-.gsearch:focus-within { border-color: var(--accent); }
-.gsearch svg { flex: none; width: 20px; height: 20px; }
-.gsearch input { flex: 1; min-width: 0; height: 44px; border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 16px; outline: none; text-align: center; }
-.gsearch input::placeholder { color: var(--ink-2); opacity: 0.7; }
-.gcard-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: 36px 0; max-width: 985px; margin: 0 auto; }
-@media (min-width: 700px) { .gcard-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 56px clamp(24px, 5vw, 50px); } }
-.gcard { display: block; color: var(--ink-2); }
+/* Portfolio: client gallery cards (open on Pic-Time) */
+.gcard-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(36px, 4vw, 56px) clamp(14px, 2vw, 28px); }
+@media (min-width: 560px) { .gcard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .gcard-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.gcard { display: grid; gap: 14px; align-content: start; color: var(--ink); animation: gcardIn 0.6s var(--ease-out) both; }
 .gcard[hidden] { display: none; }
-.gcard__img { position: relative; display: block; aspect-ratio: 3 / 2; overflow: hidden; background: rgba(243, 237, 227, 0.08); }
-.gcard__img img { width: 100%; height: 100%; object-fit: cover; }
-.gcard__hover { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(20, 16, 13, 0.82); color: var(--ivory); font-size: 0.82rem; letter-spacing: 0.04em; opacity: 0; transition: opacity 0.35s var(--ease); }
-.gcard:focus-visible .gcard__hover { opacity: 1; }
-@media (hover: hover) { .gcard:hover .gcard__hover { opacity: 1; } }
-.gcard__title { display: block; padding: 16px; text-align: center; font-family: var(--serif); font-size: 0.86rem; line-height: 1.5; letter-spacing: 0.27em; text-transform: uppercase; transition: color 0.3s; }
-.gcard:hover .gcard__title, .gcard:focus-visible .gcard__title { color: var(--ink); }
-.gempty { margin: 8px auto 0; max-width: 985px; padding: clamp(32px, 5vw, 64px) 16px; text-align: center; color: var(--ink-2); border: 1px dashed var(--line-2); }
+.gcard__img { display: block; aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--r-lg); background: var(--paper-2); }
+.gcard__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.gcard:hover .gcard__img img, .gcard:focus-visible .gcard__img img { transform: scale(1.04); }
+.gcard__meta { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 12px; padding: 0 4px; }
+.gcard__label { grid-column: 1 / -1; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+.gcard__title { font-family: var(--display); font-weight: 500; font-size: clamp(1.3rem, 1.05rem + 0.6vw, 1.65rem); line-height: 1.12; }
+.gcard__title em { font-family: var(--serif); font-style: italic; color: var(--gold-hi); }
+.gcard__cta { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-2); color: var(--ink-2); transition: background-color 0.35s, color 0.35s, border-color 0.35s; }
+.gcard__cta svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease-out); }
+.gcard:hover .gcard__cta, .gcard:focus-visible .gcard__cta { background: var(--accent); border-color: var(--accent); color: var(--night); }
+.gcard:hover .gcard__cta svg { transform: translate(2px, -2px); }
+.gtools { display: flex; flex-wrap: wrap; align-items: center; gap: 8px; }
+.gsearch { position: relative; display: flex; align-items: center; flex: 1 1 100%; min-height: 54px; padding: 0 8px 0 20px; border-radius: 999px; background: rgba(28, 23, 19, 0.94); border: 1px solid var(--line); color: var(--ink-2); transition: border-color 0.3s; }
+.gsearch:focus-within { border-color: var(--accent); }
+.gsearch svg { flex: none; width: 18px; height: 18px; }
+.gsearch input { flex: 1; min-width: 0; height: 52px; padding: 0 12px; border: 0; background: transparent; color: var(--ink); font: inherit; font-size: 16px; outline: none; }
+.gsearch input::placeholder { color: var(--ink-2); opacity: 0.75; }
+@media (min-width: 1100px) { .gsearch { order: 2; flex: 1 1 260px; max-width: 360px; margin-left: auto; } }
+.gempty { margin: 8px 0 0; padding: clamp(32px, 5vw, 64px) 16px; text-align: center; color: var(--ink-2); border: 1px dashed var(--line-2); border-radius: var(--r-lg); }
 .gempty[hidden] { display: none; }
 .gempty__clear { margin-left: 6px; color: var(--accent); text-decoration: underline; text-underline-offset: 3px; }
 .gallery-more { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 56px); }
