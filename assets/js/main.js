@@ -199,7 +199,7 @@
       });
       if (gMore) gMore.parentElement.hidden = n <= gShown;
       if (gEmpty) gEmpty.hidden = n > 0;
-      if (gStatus) gStatus.textContent = gQuery ? n + (n === 1 ? " gallery found" : " galleries found") : "";
+      if (gStatus) gStatus.textContent = n + (n === 1 ? " gallery" : " galleries");
     }
     if (gBar) gBar.addEventListener("click", function (e) {
       var btn = e.target.closest("[data-gfilter]");
