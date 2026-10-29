@@ -382,7 +382,7 @@ def build_home():
 <section class="section">
   <div class="container">
     <div class="head__top reveal"><span class="label">(01) — The studio</span><span class="label">Peoria · Chicago · Wisconsin</span></div>
-    <p class="statement mt-l" data-scrub-words>We're Dan &amp; Lydia<span class="inline-img inline-img--round" style="{bg('lydia')}"></span>, a husband-and-wife team telling love stories<span class="inline-img" style="{bg('golden-hour-portrait')}"></span> through honest photographs and <em>cinematic film</em><span class="inline-img" style="{bg('dan-filming')}"></span> so you can feel your day all over again.</p>
+    <p class="statement mt-l" data-scrub-words>We're Dan &amp; Lydia, a husband-and-wife team telling love stories through honest photographs and <em>cinematic film</em> so you can feel your day all over again.</p>
     <div class="statement-foot reveal">
       <div class="row"><span class="pill">Documentary approach</span><span class="pill">Two artists at every wedding</span><span class="pill">Hand-edited by Dan</span></div>
       <a class="link" href="about.html">Meet Dan &amp; Lydia {ARROW}</a>
@@ -528,7 +528,7 @@ def build_about():
 <section class="section">
   <div class="container">
     <div class="head__top reveal"><span class="label">(01) — Our approach</span><span class="label">A true team effort</span></div>
-    <p class="statement mt-l" data-scrub-words>The business carries Dan's name<span class="inline-img inline-img--round" style="{bg('dan-coffee')}"></span>, but it's truly a team effort. We complement each other's strengths<span class="inline-img inline-img--round" style="{bg('lydia')}"></span> so you can be <em>fully present</em> while we capture every emotion, moment and memory.</p>
+    <p class="statement mt-l" data-scrub-words>The business carries Dan's name, but it's truly a team effort. We complement each other's strengths so you can be <em>fully present</em> while we capture every emotion, moment and memory.</p>
   </div>
 </section>
 
@@ -717,7 +717,7 @@ def build_investment():
 <section class="section">
   <div class="container">
     <div class="head__top reveal"><span class="label">(01) — Our philosophy</span><span class="label">Real · Raw · Personal</span></div>
-    <p class="statement mt-l" data-scrub-words>We capture the quiet touches<span class="inline-img" style="{bg('lexi-lucas-10')}"></span>, the nervous laughter, the teary-eyed vows<span class="inline-img" style="{bg('lexi-lucas-6')}"></span> and the <em>unfiltered joy</em> that make your love story uniquely yours.</p>
+    <p class="statement mt-l" data-scrub-words>We capture the quiet touches, the nervous laughter, the teary-eyed vows and the <em>unfiltered joy</em> that make your love story uniquely yours.</p>
   </div>
 </section>
 

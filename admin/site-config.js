@@ -110,8 +110,8 @@ window.SITE_EDITOR_CONFIG = {
         '<div class="page-hero__grid"><h1 class="h-xl page-hero__title">A bold headline,<br><em>beautifully said.</em></h1><p class="lede">A short introduction to this page. Click any text to edit it.</p></div></div></section>'],
       ["sec-heading", "Sections", "Section heading", ico('<path d="M5 6h14M5 11h9"/><path d="M5 17h6"/>'),
         wrap(head("01", "Section label", "Two lines of<br><em>headline.</em>", "A sentence that supports the headline."))],
-      ["sec-statement", "Sections", "Statement with photos", ico('<path d="M4 8h9M4 13h16M4 18h11"/><rect x="15" y="6" width="5" height="4" rx="2"/>'),
-        wrap('<div class="head__top"><span class="label">(01) — Label</span><span class="label">Right label</span></div><p class="statement mt-l">A big, confident sentence<span class="inline-img" style="background-image:url(' + IMG("golden-hour-portrait") + ')"></span> with little photos set right <em>inside the words.</em></p>')],
+      ["sec-statement", "Sections", "Statement", ico('<path d="M4 8h9M4 13h16M4 18h11"/>'),
+        wrap('<div class="head__top"><span class="label">(01) — Label</span><span class="label">Right label</span></div><p class="statement mt-l">A big, confident sentence with an <em>accent in the words.</em></p>')],
       ["sec-split", "Sections", "Image + text", ico('<rect x="3" y="5" width="8" height="14" rx="2"/><path d="M14 8h7M14 12h7M14 16h5"/>'),
         wrap('<div class="ed-cols ed-cols--2" style="align-items:center">' + media("dan-filming", "Describe this photo", "ratio-portrait") +
         '<div class="stack"><span class="label">Label</span><h2 class="h-lg">Headline with an <em>accent.</em></h2><p class="body">Write a paragraph here. Click to edit text, double-click the photo to replace it.</p>' + btn("Call to action", "contact.html") + "</div></div>")],
