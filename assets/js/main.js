@@ -178,6 +178,32 @@
     });
   }
 
+  /* ---------- Portfolio: client gallery cards ---------- */
+  var gGrid = document.querySelector("[data-gallery-grid]");
+  if (gGrid) {
+    var gCards = Array.prototype.slice.call(gGrid.querySelectorAll(".gcard"));
+    var gBar = document.querySelector("[data-gfilters]");
+    var gMore = document.querySelector("[data-gallery-more]");
+    var gStep = parseInt(gGrid.dataset.page, 10) || 24, gShown = gStep, gFilter = "all";
+    function gRender() {
+      var n = 0;
+      gCards.forEach(function (c) {
+        var match = gFilter === "all" || c.dataset.cat === gFilter;
+        c.hidden = !(match && n++ < gShown);
+      });
+      if (gMore) gMore.parentElement.hidden = n <= gShown;
+    }
+    if (gBar) gBar.addEventListener("click", function (e) {
+      var btn = e.target.closest("[data-gfilter]");
+      if (!btn) return;
+      gFilter = btn.dataset.gfilter; gShown = gStep;
+      gBar.querySelectorAll("[data-gfilter]").forEach(function (b) { b.setAttribute("aria-pressed", String(b === btn)); });
+      gRender();
+    });
+    if (gMore) gMore.addEventListener("click", function () { gShown += gStep; gRender(); });
+    gRender();
+  }
+
   /* ---------- Lightbox ---------- */
   var lb = document.getElementById("lightbox");
   if (lb) {

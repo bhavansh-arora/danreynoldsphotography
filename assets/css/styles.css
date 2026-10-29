@@ -587,6 +587,27 @@ a.tile--media:hover .circle-btn { background: var(--ivory); color: var(--night);
 .masonry__tag { position: absolute; left: 10px; bottom: 10px; z-index: 1; opacity: 0; transform: translateY(6px); transition: opacity 0.35s, transform 0.45s var(--ease-out); }
 .masonry__tag .pill { background: rgba(20, 16, 13, 0.75); border-color: transparent; color: var(--ivory); min-height: 28px; font-size: 0.75rem; }
 .masonry__item:hover .masonry__tag, .masonry__item:focus-visible .masonry__tag { opacity: 1; transform: none; }
+/* Portfolio: client gallery cards (open on Pic-Time) */
+.gcard-grid { display: grid; grid-template-columns: minmax(0, 1fr); gap: clamp(36px, 4vw, 56px) clamp(14px, 2vw, 28px); }
+@media (min-width: 560px) { .gcard-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (min-width: 1000px) { .gcard-grid { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
+.gcard { display: grid; gap: 14px; align-content: start; color: var(--ink); animation: gcardIn 0.6s var(--ease-out) both; }
+.gcard[hidden] { display: none; }
+.gcard__img { display: block; aspect-ratio: 3 / 2; overflow: hidden; border-radius: var(--r-lg); background: var(--paper-2); }
+.gcard__img img { width: 100%; height: 100%; object-fit: cover; transition: transform 1.2s var(--ease-out); }
+.gcard:hover .gcard__img img, .gcard:focus-visible .gcard__img img { transform: scale(1.04); }
+.gcard__meta { display: grid; grid-template-columns: minmax(0, 1fr) auto; align-items: center; gap: 4px 12px; padding: 0 4px; }
+.gcard__label { grid-column: 1 / -1; font-family: var(--mono); font-size: 0.68rem; letter-spacing: 0.16em; text-transform: uppercase; color: var(--accent); }
+.gcard__title { font-family: var(--display); font-weight: 500; font-size: clamp(1.3rem, 1.05rem + 0.6vw, 1.65rem); line-height: 1.12; }
+.gcard__title em { font-family: var(--serif); font-style: italic; color: var(--gold-hi); }
+.gcard__cta { display: inline-grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line-2); color: var(--ink-2); transition: background-color 0.35s, color 0.35s, border-color 0.35s; }
+.gcard__cta svg { width: 16px; height: 16px; transition: transform 0.4s var(--ease-out); }
+.gcard:hover .gcard__cta, .gcard:focus-visible .gcard__cta { background: var(--accent); border-color: var(--accent); color: var(--night); }
+.gcard:hover .gcard__cta svg { transform: translate(2px, -2px); }
+.gallery-more { display: flex; justify-content: center; margin-top: clamp(32px, 4vw, 56px); }
+.gallery-more[hidden] { display: none; }
+@keyframes gcardIn { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+@media (prefers-reduced-motion: reduce) { .gcard { animation: none; } }
 
 .lightbox { position: fixed; inset: 0; z-index: 300; background: #0f0b09; color: var(--ivory); display: grid; grid-template-rows: auto 1fr auto; opacity: 0; visibility: hidden; transition: opacity 0.4s var(--ease), visibility 0s linear 0.4s; }
 .lightbox.is-open { opacity: 1; visibility: visible; transition: opacity 0.4s var(--ease); }
