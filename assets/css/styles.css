@@ -962,3 +962,14 @@ html { -webkit-tap-highlight-color: transparent; }
 .swipe-dots span { width: 6px; height: 6px; border-radius: 6px; background: var(--line-2); transition: width 0.35s var(--ease-out), background-color 0.35s; }
 .swipe-dots span.is-active { width: 22px; background: var(--accent); }
 @media (max-width: 1023px) { .is-swipe + .swipe-dots { display: flex; } }
+
+/* Investment: what most couples spend */
+.invest-note { display: grid; gap: 14px 40px; align-items: center; margin-top: 12px; padding: clamp(22px, 3vw, 36px); border-radius: var(--r-xl); border: 1px solid var(--line-gold); background: linear-gradient(120deg, rgba(165, 185, 147, 0.12), rgba(165, 185, 147, 0) 60%), var(--paper-2); }
+@media (min-width: 900px) { .invest-note { grid-template-columns: auto 1fr auto; } }
+.invest-note__figure { display: flex; align-items: baseline; flex-wrap: wrap; gap: 6px 10px; }
+.invest-note__figure strong { font-family: var(--display); font-weight: 500; font-size: clamp(2.6rem, 2rem + 2vw, 3.6rem); line-height: 1; color: var(--gold-hi); }
+.invest-note__figure small { color: var(--muted); font-size: 0.9rem; }
+.invest-note__text { max-width: 60ch; color: var(--ink-2); }
+
+/* Contact on phones and tablets: the inquiry form comes first */
+@media (max-width: 1023px) { .contact-grid > .form-panel { order: -1; } }
