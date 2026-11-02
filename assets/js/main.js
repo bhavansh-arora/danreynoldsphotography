@@ -36,8 +36,27 @@
   /* ---------- Mobile menu ---------- */
   var toggle = document.querySelector(".menu-toggle");
   var menu = document.getElementById("mobile-menu");
+  // While the menu is open, the page behind it must not scroll. overflow: hidden alone doesn't stop iPhones (or the
+  // page around the site on Squarespace), so the page is held in place and put back exactly where it was on close.
+  var lockedY = null;
+  function lockScroll(on) {
+    var b = document.body, de = document.documentElement;
+    if (on && lockedY === null) {
+      lockedY = window.scrollY;
+      b.style.position = "fixed"; b.style.top = -lockedY + "px"; b.style.left = "0"; b.style.right = "0"; b.style.width = "100%";
+      de.style.overflow = "hidden";
+    } else if (!on && lockedY !== null) {
+      var y = lockedY; lockedY = null;
+      b.style.position = b.style.top = b.style.left = b.style.right = b.style.width = "";
+      de.style.overflow = "";
+      var prev = de.style.scrollBehavior; de.style.scrollBehavior = "auto";
+      window.scrollTo(0, y);
+      de.style.scrollBehavior = prev;
+    }
+  }
   function setMenu(open, fromKeyboard) {
     document.body.classList.toggle("menu-open", open);
+    lockScroll(open);
     toggle.setAttribute("aria-expanded", String(open));
     toggle.setAttribute("aria-label", open ? "Close menu" : "Open menu");
     var label = toggle.firstChild; if (label && label.nodeType === 3) label.nodeValue = open ? "Close" : "Menu";
@@ -63,6 +82,8 @@
       setMenu(false);
     });
     window.addEventListener("resize", function () { if (window.innerWidth >= 1024) setMenu(false); });
+    // Back to this page from the browser's history: start with the menu closed and the page scrollable.
+    window.addEventListener("pageshow", function (e) { if (e.persisted && document.body.classList.contains("menu-open")) setMenu(false); });
   }
 
   /* ---------- Split headline into lines ---------- */
