@@ -1,0 +1,82 @@
+SQUARESPACE CODES - Dan Reynolds Photography
+
+Paste each file into ONE Code Block on the Squarespace page with that address.
+Squarespace: open the page > Edit > add a Code Block > paste everything from the file > turn off 'Display Source' > Save.
+Then Page Settings > SEO: paste the title and description listed below.
+Only paste these once https://drp-3n69xh.danreynoldsphotography.com is live.
+
+home.html  ->  Squarespace page address: /
+   SEO title:       Dan Reynolds | Chicago & Peoria Wedding Photographer & Films
+   SEO description: Documentary wedding photography and cinematic films by husband-and-wife team Dan & Lydia Reynolds, serving Chicago, Central Illinois, Milwaukee and Madison.
+
+about.html  ->  Squarespace page address: /about
+   SEO title:       About Dan & Lydia
+   SEO description: Meet Dan & Lydia Reynolds, a husband-and-wife wedding photography and film team. Rochester roots, a love of storytelling and a documentary approach.
+
+portfolio.html  ->  Squarespace page address: /portfolio
+   SEO title:       Portfolio
+   SEO description: A few favorite frames from Dan Reynolds Photography: documentary, honest and timeless wedding photos from Chicago, Central Illinois and Wisconsin.
+
+galleries.html  ->  Squarespace page address: /galleries
+   SEO title:       Galleries
+   SEO description: Full wedding and engagement galleries by Dan Reynolds Photography, newest first: every love story as it unfolded, from Chicago, Central Illinois and Wisconsin.
+
+films.html  ->  Squarespace page address: /films
+   SEO title:       Wedding Films
+   SEO description: Cinematic wedding films and highlight reels by Dan Reynolds, shot on Sony cinema gear with pro audio and drone coverage. Chicago, Illinois and Wisconsin.
+
+investment.html  ->  Squarespace page address: /investment
+   SEO title:       Investment & Packages
+   SEO description: Wedding photography and film packages from $3,500: two photographers, a free engagement session and cinematic highlight films. See pricing and FAQs.
+
+contact.html  ->  Squarespace page address: /contact
+   SEO title:       Contact & Inquire
+   SEO description: Check availability for wedding photography and film with Dan & Lydia Reynolds. Send an inquiry and we'll be in touch soon.
+
+blog.html  ->  Squarespace page address: /blog
+   SEO title:       Blog
+   SEO description: Wedding planning tips, real love stories and a look behind the scenes from Dan & Lydia of Dan Reynolds Photography.
+
+blog-post.html  ->  Squarespace page address: /post
+   One page for every blog post (it shows the post named in ?p= in the address). Set its SEO in Squarespace as you like.
+
+thank-you.html  ->  Squarespace page address: /thank-you
+   SEO title:       Thank you
+   SEO description: Thank you for your inquiry. Dan or Lydia will be in touch within 24 hours.
+
+drone.html  ->  Squarespace page address: /drone
+   SEO title:       Drone Photography & Video
+   SEO description: Aerial drone photography and video in Peoria and Central Illinois for real estate, agriculture, events and weddings, by a licensed UAS pilot.
+
+st-louis.html  ->  Squarespace page address: /st-louis-wedding-photographer
+   SEO title:       St. Louis Wedding Photographer & Videographer
+   SEO description: Dan & Lydia are a married wedding photographer and videographer team serving St. Louis and beyond, with timeless, candid photos and cinematic films.
+
+links.html  ->  Squarespace page address: /links
+   SEO title:       Links
+   SEO description: Inquire, see recent weddings, watch our films and more from Dan & Lydia of Dan Reynolds Photography.
+
+privacy-policy.html  ->  Squarespace page address: /privacy-policy
+   SEO title:       Privacy Policy
+   SEO description: How Dan Reynolds Photography collects, uses and protects your information. We never sell your data.
+
+terms-of-service.html  ->  Squarespace page address: /terms-of-service
+   SEO title:       Terms of Use
+   SEO description: The terms for using the Dan Reynolds Photography website, including copyright in our photos and films.
+
+page-not-found.html  ->  Squarespace page address: /error-404
+   SEO title:       Page not found
+   SEO description: This page could not be found.
+
+URL mappings (Settings > Advanced > URL Mappings), add after the new pages exist:
+
+/privacy-policy-clone-1741033844488 -> /privacy-policy 301
+/terms-of-service-clone-1741033903908 -> /terms-of-service 301
+/gallery -> /galleries 301
+/journal -> /blog 301
+/contact-us -> /contact 301
+/investment-1 -> /investment 301
+/under-construction -> / 301
+/under-construction-1 -> / 301
+/contact-2 -> /contact 301
+/page-not-found -> /error-404 301
