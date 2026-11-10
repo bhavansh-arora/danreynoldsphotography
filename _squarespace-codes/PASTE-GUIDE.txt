@@ -33,13 +33,6 @@ contact.html  ->  Squarespace page address: /contact
    SEO title:       Contact & Inquire
    SEO description: Check availability for wedding photography and film with Dan & Lydia Reynolds. Send an inquiry and we'll be in touch soon.
 
-blog.html  ->  Squarespace page address: /blog
-   SEO title:       Blog
-   SEO description: Wedding planning tips, real love stories and a look behind the scenes from Dan & Lydia of Dan Reynolds Photography.
-
-blog-post.html  ->  Squarespace page address: /post
-   One page for every blog post (it shows the post named in ?p= in the address). Set its SEO in Squarespace as you like.
-
 thank-you.html  ->  Squarespace page address: /thank-you
    SEO title:       Thank you
    SEO description: Thank you for your inquiry. Dan or Lydia will be in touch within 24 hours.
@@ -67,6 +60,10 @@ terms-of-service.html  ->  Squarespace page address: /terms-of-service
 page-not-found.html  ->  Squarespace page address: /error-404
    SEO title:       Page not found
    SEO description: This page could not be found.
+
+BLOG (Squarespace's own Blog page at /blog, posts at /blog/post-name):
+blog-settings-code.html  ->  paste ONCE into the Blog page's Settings > Advanced > Page Header Code Injection.
+   It shows the blog page and every post in the site's design, automatically. No Code Block on the blog.
 
 URL mappings (Settings > Advanced > URL Mappings), add after the new pages exist:
 
